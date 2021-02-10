@@ -1,0 +1,91 @@
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+ 
+}
+
+
+
+table {
+    border: black solid 3px;
+    margin: 30px;
+    margin-top: 4px;
+}
+
+
+td {
+    text-align: center;
+    background-color: rgb(170, 123, 69);
+    width: 75px;
+    height: 75px;
+    
+}
+
+p {
+    display: inline;
+}
+
+.non-playable-square {
+    background-color: white;
+    border: solid black 1px;
+}
+
+span {
+    display: inline;
+}
+
+.black-piece {
+    
+    width: 30px;
+    height: 30px;
+    padding: 20px;
+    background-color: rgb(84, 84, 84);
+    border: solid black 2px;
+    border-radius: 50px 50px;
+}
+
+.red-piece {
+    width: 30px;
+    height: 30px;
+    padding: 20px;
+    background-color: rgb(148, 54, 50 );
+    border: solid black 2px;
+    border-radius: 50px 50px;
+
+}
+
+.features-box {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 1250px;
+    height: 100px;
+    margin: 0;
+    border: solid black 2px;
+    padding: 5px;
+   
+}
+
+.buttons {
+    width: 200px;
+    height: 50px;
+    margin: 50px;
+    margin: auto;
+}
+
+.user-turn-indicators {
+    width: 200px;
+    height: 30px;
+    margin: 50px;
+    border: solid black 2px;
+    margin: auto;
+    line-height: 30px;
+}
+
+h1 {
+    margin: 0;
+}
