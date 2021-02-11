@@ -53,3 +53,5 @@ Capturing A Piece
 4. Show user’s collected pieces
 5. CSS styling
 6. Add 3d board and pieces
+7. Add audio sound after each move is made
+8. Checkers will move to new sqare rather than just appear
