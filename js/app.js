@@ -5,14 +5,14 @@ let boardState = [null, 0, null, 1, null, 2, null, 3, null, 4, null, 5, null, 6,
 let turn = true
 let blacksTotal = 12
 let redsTotal = 12
-let allUserPieces = null
+let userPieces
 
+//  
 let selectedPiece = {
     pieceId: -1,
-    // Look at probably changing variable names | Placing object in array could cause issues
-    selectedPiece.indexOfPiecesSquare: -1,
-    selectedPiece.seventhSquareFromPiece: false,
-    selectedPiece.ninthSquareFromPiece: false,
+    boardPiecesIndex: -1,
+    seventhSquareFromPiece: false,
+    ninthSquareFromPiece: false,
     fourteenthSquareFromPiece: false,
     eighteenthSquareFromPiece: false,
     negativeSeventhSquareFromPiece: false,
@@ -22,11 +22,11 @@ let selectedPiece = {
 }
 
 /* DOM References */
-let squares = document.querySelector('td')
+const squares = document.querySelector('td')
 let blacksPieces = document.querySelector('span')
 let redsPieces = document.querySelector('p')
-let redsTurnBox = documemt.getElementById('user-1-turn-box')
-let blacksTurnBox = document.getElementById('user-2-turn-box')
+const blacksTurnBox = document.getElementById('user1-turn-box')
+const redsTurnBox = document.getElementById('user2-turn-box')
 
 /* Functions and Game Logic */
 
@@ -36,16 +36,16 @@ let blacksTurnBox = document.getElementById('user-2-turn-box')
 
 /* Event Listeners */
 
-// Adds event listeners to both players pieces
+// Adds event listeners to red or black pieces depending on whose turn it is
 const addEventListenersToUserPieces = () => {
     if (turn) {
-        for (i = 0; i < blacksPieces.length; i++) {
-            userOnePieces[i].addEventListener('click', getUserTurn) 
+        for (let i = 0; i < blacksPieces.length; i++) {
+            blacksPieces[i].addEventListener('click', getUserTurn) 
         }
     } 
     else {
-        for (i = 0; i < redsPieces.length; i++) {
-            unerTwoPieces[i].addEventListener('click', getUserTurn )
+        for (let i = 0; i < redsPieces.length; i++) {
+            redsPieces[i].addEventListener('click', getUserTurn )
         }
     }
 }
@@ -58,60 +58,62 @@ const getUserTurn = () => {
     else {
         let userPieces = redsPieces;
     }
-
-    removeSquareClickEvent()
+    removeSquareOnclick()
+    resetHighlightedMove() 
 }
-
-const removeSquareClickEvents = () => {
+///////////////////////////////////////////////////////////////////////////////////
+const removeSquareOnclick = () => {
     for (i = 0; i < squares.length; i++) {
         squares[i].removeAttribute('click');
-    }                  
-    getPieceId()
-    resetHighlightedMoves()      
+    }             
 }
 
-const getPieceId = () => {
-    for (i = 0; i < squares.length; i ++) {
-        square[i].removeAttribute('onclick')
+
+const resetHighlightedMove = () => {
+    for (let i = 0; i < allUserPieces.length; i++) {
+        allUserPieces[i].style.border = "solid green 1px" //COMEBACKANDCHANGE   //WORK ON THIS
     }
-    resetHighlightedSquares()
+    resetSelectedPiecesinfo()    //selected pieces properties
+    getSelectedPieceInfo()
 }
 
-const resetHighlightedSquares = () => {
-    for (i = 0; i < allUserPieces.length; i++) {
-        allUserPieces[i].style.border = COMEBACKANDCHANGE   //WORK ON THIS
-    }
-    resetSelectedPiece()    //selected pieces properties
-    getSelectedPiece()
-}
 
-const resetSelectedPiece = () => {
+const resetSelectedPiecesInfo = () => {
     
-        selectedPiece.pieceId = -1,
-        selectedPiece.indexOfPiecesSquare = -1,
-        selectedPiece.seventhSquareFromPiece = false,
-        selectedPiece.ninthSquareFromPiece = false,
-        selectedPiece.fourteenthSquareFromPiece = false,
-        selectedPiece.eighteenthSquareFromPiece = false,
-        selectedPiece.negativeSeventhSquareFromPiece = false,
-        selectedPiece.negativeNinthSquareFromPiece = false,
-        selectedPiece.negativeFourteenthSquareFromPiece = false,
-        selectedPiece.negativeEighteenthSquareFromPiece = false,
-    }
+        selectedPiece.pieceId = -1;
+        boardPiecesIndex = -1;
+        seventhSquareFromPiece = false;
+        ninthSquareFromPiece = false;
+        selectedPiece.fourteenthSquareFromPiece = false;
+        selectedPiece.eighteenthSquareFromPiece = false;
+        selectedPiece.negativeSeventhSquareFromPiece = false;
+        selectedPiece.negativeNinthSquareFromPiece = false;
+        selectedPiece.negativeFourteenthSquareFromPiece = false;
+        selectedPiece.negativeEighteenthSquareFromPiece = false;
+}    
+
+///////////////////////////////////////////////////////////////////////////////////
+const getSelectedPieceInfo = () => {
+    selectedPiece.pieceId = parseInt(event.target.id)
+    selectedPiece.boardPiecesIndex = findPiece(selectedPiece.pieceId) \
+    /* function to check if piece is king */
+    getAvailableMoves()
+}
+
+/* call back function */
+let findPiece = function (pieceId) {
+    let parsed = parseInt(pieceId)
+    return boardState.indexOf(parsed)
+}
+
+const checkAvailableMoves = () => {
 
 }
+
+
+
+
 
 // Function call starts game
 addEventListenersToUserPieces()
 
-// const move = (event) => {
-
-// }
-
-// const respond = (event) => {
-//     document.getElementById('14').addEventListener('click', move)
-    
-// }
-
-
-// document.getElementById('12').addEventListener('click', respond)
