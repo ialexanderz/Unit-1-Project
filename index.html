@@ -1,107 +1,114 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Jockey+One&family=Manrope:wght@200;400;500&family=Saira+Condensed:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <script defer src="js/app.js"></script>
   <title>Checkers</title>
 </head>
 <body>
   <main>
-  <h1>CHECKERS</h1>
-    <table>
-      <tr>
-        <td class="non-playable-square"></td>
-        <td><a class="red-piece" id="0"></a></td>
-        <td class="non-playable-square"></td>
-        <td><a class="red-piece" id="1"></a></td>
-        <td class="non-playable-square"></td>
-        <td><a class="red-piece" id="2"></a></td>
-        <td class="non-playable-square"></td>
-        <td><a class="red-piece" id="3"></a></td>
-      </tr>
-      <tr>
-        <td><a class="red-piece" id="4"></a></td>
-        <td class="non-playable-square"></td>
-        <td><a class="red-piece" id="5"></a></td>
-        <td class="non-playable-square"></td>
-        <td><a class="red-piece" id="6"></a></td>
-        <td class="non-playable-square"></td>
-        <td><a class="red-piece" id="7"></a></td>
-        <td class="non-playable-square"></td>
-        
-      </tr>
-      <tr>
-        <td class="non-playable-square"></td>
-        <td><a class="red-piece" id="8"></a></td>
-        <td class="non-playable-square"></td>
-        <td><a class="red-piece" id="9"></a></td>
-        <td class="non-playable-square"></td>
-        <td><a class="red-piece" id="10"></a></td>
-        <td class="non-playable-square"></td>
-        <td><a class="red-piece" id="11"></a></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td class="non-playable-square"></td>
-        <td></a></td>
-        <td class="non-playable-square"></td>
-        <td></td>
-        <td class="non-playable-square"></td>
-        <td></td>
-        <td class="non-playable-square"></td>
-      </tr>
-          
-      <tr>
-        <td class="non-playable-square"></td>
-        <td></span></td>
-        <td class="non-playable-square"></td>
-        <td></span></td>
-        <td class="non-playable-square"></td>
-        <td></span></td>
-        <td class="non-playable-square"></td>
-        <td></td>
-        </tr>
-      <tr>
-        <td><span class="black-piece" id="12"></span></td>
-        <td class="non-playable-square"></td>
-        <td><span class="black-piece" id="13"></span></td>
-        <td class="non-playable-square"></td>
-        <td><span class="black-piece" id="14"></span></td>
-        <td class="non-playable-square"></td>
-        <td><span class="black-piece" id="15"></span></td>
-        <td class="non-playable-square"></td>
-      </tr>
-
-      <tr>
-        <td class="non-playable-square"></td>
-        <td><span class="black-piece" id="16"></span><span></td>
-        <td class="non-playable-square"></td>
-        <td><span class="black-piece" id="17"></span></td>
-        <td class="non-playable-square"></td>
-        <td><span class="black-piece" id="18"></span></td>
-        <td class="non-playable-square"></td>
-        <td><span class="black-piece" id="19"></span></td>
-        
-      </tr>  
-      <tr>
-        <td><span class="black-piece" id="20"></span></td>
-        <td class="non-playable-square"></td>
-        <td><span class="black-piece" id="21"></span></td>
-        <td class="non-playable-square"></td>
-        <td><span class="black-piece" id="22"></span></td>
-        <td class="non-playable-square"></td>
-        <td><span class="black-piece" id="23"></span></td>
-        <td class="non-playable-square"></td>
-     </tr>
-    </table>
-    <div class="features-box">
-      <div class="user-turn-indicators" id="user1-turn-box">Black Moves</div>
-      <button class="buttons" id="new-game">New Game</button>
-      <button class="buttons" id="instructions">Instructions</button>
-      <div class="user-turn-indicators" id="user2-turn-box">Red Moves</div>
+    <h1>CHECKERS</h1>
+    <div class="red-turn-text mobile">
+        Reds turn
     </div>
-  </main>  
+    <table class="checkers-board">
+        <tr>
+            <td class="non-playable-square"></td>
+            <td><p class="red-piece" id="0"></p></td>
+            <td class="non-playable-square"></td>
+            <td><p class="red-piece" id="1"></p></td>
+            <td class="non-playable-square"></td>
+            <td><p class="red-piece" id="2"></p></td>
+            <td class="non-playable-square"></td>
+            <td><p class="red-piece" id="3"></p></td>
+        </tr>
+        <tr>
+            <td><p class="red-piece" id="4"></p></td>
+            <td class="non-playable-square"></td>
+            <td><p class="red-piece" id="5"></p></td>
+            <td class="non-playable-square"></td>
+            <td><p class="red-piece" id="6"></p></td>
+            <td class="non-playable-square"></td>
+            <td><p class="red-piece" id="7"></p></td>
+            <td class="non-playable-square"></td>
+        </tr>
+        <tr>
+            <td class="non-playable-square"></td>
+            <td><p class="red-piece" id="8"></p></td>
+            <td class="non-playable-square"></td>
+            <td><p class="red-piece" id="9"></p></td>
+            <td class="non-playable-square"></td>
+            <td><p class="red-piece" id="10"></p></td>
+            <td class="non-playable-square"></td>
+            <td><p class="red-piece" id="11"></p></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="non-playable-square"></td>
+            <td></td>
+            <td class="non-playable-square"></td>
+            <td></td>
+            <td class="non-playable-square"></td>
+            <td></td>
+            <td class="non-playable-square"></td>
+        </tr>
+        <tr>
+            <td class="non-playable-square"></td>
+            <td></td>
+            <td class="non-playable-square"></td>
+            <td></td>
+            <td class="non-playable-square"></td>
+            <td></td>
+            <td class="non-playable-square"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><span class="black-piece" id="12"></span></td>
+            <td class="non-playable-square"></td>
+            <td><span class="black-piece" id="13"></span></td>
+            <td class="non-playable-square"></td>
+            <td><span class="black-piece" id="14"></span></td>
+            <td class="non-playable-square"></td>
+            <td><span class="black-piece" id="15"></span></td>
+            <td class="non-playable-square"></td>
+        </tr>
+        <tr>
+            <td class="non-playable-square"></td>
+            <td><span class="black-piece" id="16"></span></td>
+            <td class="non-playable-square"></td>
+            <td><span class="black-piece" id="17"></span></td>
+            <td class="non-playable-square"></td>
+            <td><span class="black-piece" id="18"></span></td>
+            <td class="non-playable-square"></td>
+            <td><span class="black-piece" id="19"></span></td>
+        </tr>
+        <tr>
+            <td><span class="black-piece" id="20"></span></td>
+            <td class="non-playable-square"></td>
+            <td><span class="black-piece" id="21"></span></td>
+            <td class="non-playable-square">
+            <td><span class="black-piece" id="22"></span></td>
+            <td class="non-playable-square"></td>
+            <td><span class="black-piece" id="23"></span></td>
+            <td class="non-playable-square"></td>
+        </tr>
+    </table>
+    <div class="desktop">
+        <div class="red-turn-text">
+            Red Moves
+        </div>
+        <p id="divider">|</p>
+        <div class="black-turn-text">
+            Blacks turn
+        </div>
+    </div>
+    <div class="black-turn-text mobile">
+        Black Moves
+    </div>
+</main>
 </body>
     
         
